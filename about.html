@@ -1,0 +1,58 @@
+
+{% load static %}
+{% block title %}{% endblock title %}
+
+
+
+
+
+{% block main-content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="{% static 'app/css/style1.css' %}">
+
+ <br><br> 
+<body>
+
+  <div class="person" style="--color: WHITE">
+    <div class="container">
+      <div class="conianer-inner">
+        <div class="circle"></div>
+        <img src="{% static 'app/css/image-1.png' %}">
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h1>Tanjim</h1>
+    <p>Front-End Developer</p>
+  </div>
+
+  <div class="person" style="--color: RED">
+    <div class="container">
+      <div class="conianer-inner">
+        <div class="circle"></div>
+        <img src="{% static 'app/css/image-2.png' %}">
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h1>Zubair</h1>
+    <p>Back-End Developer</p>
+  </div>
+
+  <div class="person" style="--color: GREEN">
+    <div class="container">
+      <div class="conianer-inner">
+        <div class="circle"></div>
+        <img src="{% static 'app/css/image-3.png' %}">
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h1>Zakaria</h1>
+    <p>Back-End Developer</p>
+  </div>
+
+</body>
+</html>
+
+{% endblock main-content %}

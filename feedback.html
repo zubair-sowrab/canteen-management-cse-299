@@ -1,0 +1,64 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Feedback{% endblock title %}
+
+
+{% block main-content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" %}" >
+    <link rel="stylesheet" href="{% static 'app/css/style2.css' %}">
+    <title>Let Us Know Your Feedback || Team Eureka</title>
+  </head>
+  <body>
+    <div id="panel" class="panel-container">
+      <strong>How satisfied are you with our <br /> customer support performance?</strong>
+      <div class="ratings-container">
+        <div class="rating">
+          <form method="POST" action="{% url 'feedback_submit' %}">
+            {% csrf_token %}
+           
+            
+              <img src="{% static 'app/css/image1.png' %}" alt="">
+              <small>Unhappy</small>
+         
+          </form>
+        </div>
+
+        <div class="rating">
+          <form method="POST" action="{% url 'feedback_submit' %}">
+            {% csrf_token %}
+            <input type="hidden" name="rating" value="neutral">
+       
+              <img src="{% static 'app/css/image2.png' %}" alt="">
+              <small>Neutral</small>
+       
+          </form>
+        </div>
+
+        <div class="rating">
+          <form method="POST" action="{% url 'feedback_submit' %}">
+            {% csrf_token %}
+            <input type="hidden" name="rating" value="satisfied">
+          
+              <img src="{% static 'app/css/image3.png' %}" alt="">
+              <small>Satisfied</small>
+      
+          </form>
+        </div>
+      </div>
+      <form method="POST" action="{% url 'feedback_submit' %}">
+        {% csrf_token %}
+        <textarea id="feedback-input" name="feedback" placeholder="Enter your feedback"></textarea>
+        <br><br>
+        <button class="btn" id="send" type="submit">Send Review</button>
+      </form>
+    </div>
+    <div class="credit">Cafeteria Management System <span style="color:tomato">❤</span> by <a  href="https://www.learningrobo.com/">Team Eureka</a></div>
+    <script src="script.js"></script>
+  </body>
+</html>
+{% endblock main-content %}
